@@ -2,25 +2,41 @@
   Виведіть у консоль загальну кількість яблук та винограду та їх різницю
 */
 
-const apples = 47;
+// const number = 1;
 
-const grapes = 135;
+// number = 5;
+
+// let stringValue = `Andrii`;
+
+// console.log(stringValue);
+
+// const apples = 47;
+
+// const grapes = 135;
+
+// console.log(apples + grapes);
+
+// console.log(apples - grapes);
 
 /*
   Заміни вираз перевизначення комбінованим оператором +=
 */
 
-let students = 100;
+// let students = 100;
 
-students = students + 50;
+// students = students + 50;
 
-console.log(students);
+// students += 50;
+
+// console.log(students);
 
 /*
   Розбери пріоритет операторів в інструкції присвоєння
 */
 
-const result = 108 + 223 - 2 * 5;
+// const result = 108 + (223 - 2) * 5;
+
+// console.log(result);
 
 /*
   Напиши скрипт, який виводить у консоль заокруглені значення value
@@ -30,18 +46,33 @@ const result = 108 + 223 - 2 * 5;
   Перевірте, що буде в консолі при значеннях 27.3 та 27.9
 */
 
-const value = 27.5;
+// const value = -5.5;
+
+// console.log(Math.round(value));
+
+// console.log(Math.floor(value));
+
+// console.log(Math.ceil(value));
+
+// console.log(Math.trunc(value));
 
 /*
   Склади за допомогою шаблонних рядків речення: A has B bots in stock,
   де A та В - змінні вставлені в рядок
 */
 
-const companyName = "Cyberdyne Systems";
+// const companyName = "Cyberdyne Systems";
 
-const repairBots = 150;
+// const repairBots = 150;
 
-const defenceBots = 50;
+// const defenceBots = 50;
+
+// const result =
+//   companyName + " has " + (repairBots + defenceBots) + " bots in stock";
+
+// const result = `${companyName} has ${repairBots + defenceBots} bots in stock`;
+
+// console.log(result);
 
 /*
   Методи рядків та чейнінг
@@ -57,9 +88,21 @@ const defenceBots = 50;
   Індекс маси тіла необхідно округлити до однієї цифри після коми
   */
 
-let weight = "88,3";
-let height = "1.98";
+// const weight = "88,3";
+// const height = "1,98";
 
-// const bmi =
+// const numericWeight = Number(weight.replace(",", "."));
+// const numericHeight = Number(height.replace(",", "."));
+
+// console.log(numericWeight);
+// console.log(numericHeight);
+
+// const bmi = Number((numericWeight / numericHeight ** 2).toFixed(1));
+
+// console.log(bmi);
 
 // console.log(bmi)
+
+// console.log(true > true);
+
+// console.log(false === "");
