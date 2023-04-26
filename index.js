@@ -1,26 +1,41 @@
+"use strict";
+
 // https://www.codewars.com/join?language=javascript
 // ---------------Kahoot---------//
 
 // Мутабельні та імутабельні типи даних
 // https://developer.mozilla.org/en-US/docs/Glossary/Mutable
 // const clients = ["Mango", "Poly", "Ajax"];
-// const string = "script";
+// let string = "script";
 
 // // Імутабельні
 // string[0] = "q";
+
 // console.log(string);
 
 // // Мутабельні
 
 // clients.splice(1, 1);
+// clients[0] = "242244";
 // console.log(clients);
 
 // За посиланням
 // Складні (якщо говорити правильно то тільки Object)
 //  Object
 //  Array
+
 // const arr1 = [1, 2, 3];
 // const arr2 = arr1;
+
+// console.log(arr1);
+// console.log(arr2);
+
+// console.log(arr1 === arr2);
+
+// arr2[0] = 618;
+
+// console.log(arr1);
+// console.log(arr2);
 
 // За значенням
 // Примітивні
@@ -32,6 +47,14 @@
 
 // let a = 10;
 // let b = a;
+
+// console.log(a);
+// console.log(b);
+
+// b = 11;
+
+// console.log(a);
+// console.log(b);
 
 /*
   Example 1 - Базові операції з масивом
@@ -54,6 +77,33 @@
   Подивиттсь методи push unshift shift splice
 */
 
+// const array = [];
+
+// console.log(array);
+// console.log(array[4]);
+// console.log(array.length);
+
+// const genres = ["Jazz", "Blues"];
+
+// genres[genres.length] = "Rock&roll";
+// genres.push("Rock&roll", 12);
+
+// genres.unshift("Contry", "Reggie");
+
+// console.log(genres);
+
+// console.log(genres[0]);
+
+// console.log(genres[genres.length - 1]);
+
+// genres.pop();
+
+// const genres = ["Jazz", "Blues"];
+
+// genres.splice(0, 1, "Rock&Roll");
+
+// console.log(genres);
+
 /*  
   Example 2 - Масиви та рядки
 
@@ -64,7 +114,13 @@
   Метод split
 */
 
-// const values = '8 11';
+// const values = "10 120";
+
+// const array = values.split(" ");
+
+// const result = array[0] * array[1];
+
+// console.log(result);
 
 /*
   Example 3 - Перебір масиву
@@ -76,7 +132,11 @@
   Нумерація елементів має починатися з першого.
 */
 
-// const fruits = ['🍎', '🍇', '🍑', '🍌', '🍋'];
+// const fruits = ["🍎", "🍇", "🍑", "🍌", "🍋"];
+
+// for (let index = 0; index < fruits.length; index += 1) {
+//   console.log(`${index + 1}: ${fruits[index]}`);
+// }
 
 /*
   Example 4 - Масиви та цикли
@@ -91,8 +151,15 @@
   Метод split
 */
 
-// const names = 'Jacob,William,Solomon,Kate';
-// const phones = '38001234567,38001112233,380055566377,38099912233';
+// const names = "Jacob,William,Solomon,Kate";
+// const phones = "38001234567,38001112233,380055566377,38099912233";
+
+// const namesList = names.split(",");
+// const phonesList = phones.split(",");
+
+// for (let index = 0; index < namesList.length; index += 1) {
+//   console.log(`${namesList[index]}: ${phonesList[index]}`);
+// }
 
 /*
   Example 5 - Масиви та рядки
@@ -104,7 +171,25 @@
   методи pop shift join
 */
 
-// const string = 'Welcome to the future';
+// const string = " Welcome to the future ";
+
+// const wordsList = string.trim().split(" ");
+
+// 1 variant
+// for (let index = 1; index < wordsList.length - 1; index += 1) {
+//   console.log(wordsList[index]);
+// }
+
+// 2 variant
+
+// wordsList.pop();
+// wordsList.shift();
+
+// for (let index = 0; index < wordsList.length; index += 1) {
+//   console.log(wordsList[index]);
+// }
+
+// console.log(wordsList);
 
 /*
   Example 6 - Масиви та рядки
@@ -114,7 +199,17 @@
   Методи split reverse join
 */
 
-// const string = 'Welcome to the future';
+// const string = "Welcome to the future";
+
+// const reversedString = string.split(" ").reverse().join(" ");
+
+// console.log(reversedString);
+
+// const string = "Welcome to the future";
+
+// const reversedString = string.split("").reverse().join("");
+
+// console.log(reversedString);
 
 /*
   Example 7 - Пошук елемента
@@ -124,4 +219,20 @@
   Використовуй цикл for of для розв'язання задачі.
 */
 
-// const numbers = [101, 78, 12, 76, 5, 11, 9];
+// const numbers = [5, 11, 9];
+
+// let smallestNumber = Infinity;
+
+// for (let value of numbers) {
+//   if (value < smallestNumber) {
+//     smallestNumber = value;
+//   }
+// }
+
+// console.log(smallestNumber);
+
+// function func(name) {
+//   console.log(name);
+// }
+
+// func('Andrii')
