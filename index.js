@@ -89,7 +89,7 @@ const cars = [
   Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів
 */
 
-// const getModels = (arr) => {};
+// const getModels = (arr) => arr.map((el) => el.model);
 
 // console.log(cars);
 // console.log(getModels(cars));
@@ -101,10 +101,13 @@ const cars = [
   значенням властивості price залежно від переданої знижки
 */
 
-// const makeCarsWithDiscount = (cars, discount) => {};
+// const makeCarsWithDiscount = (cars, discount) =>
+//   cars.map(({ price, ...rest }) => ({ ...rest, price: price - discount }));
 
 // console.table(cars);
 // console.table(makeCarsWithDiscount(cars, 2000));
+
+// console.log(cars[0] === makeCarsWithDiscount(cars, 2000)[0]);
 
 /*
   3. Метод filter
@@ -113,7 +116,8 @@ const cars = [
   значення параметра threshold
 */
 
-// const filterByPrice = (cars, threshold) => {};
+// const filterByPrice = (cars, threshold) =>
+//   cars.filter((el) => el.price < threshold);
 
 // console.table(cars);
 // console.table(filterByPrice(cars, 30000));
@@ -125,7 +129,7 @@ const cars = [
   Нехай функція getCarsOnSale повертає масив автомобілів властивість onSale яких true
 */
 
-// const getCarsOnSale = (cars) => {};
+// const getCarsOnSale = (cars) => cars.filter((el) => el.onSale);
 
 // console.table(cars);
 // console.table(getCarsOnSale(cars));
@@ -137,10 +141,10 @@ const cars = [
   якого та параметр model однакові
 */
 
-// const getCarByModel = (cars, model) => {};
+// const getCarByModel = (cars, model) => cars.find((el) => el.model === model);
 
-// console.log(getCarByModel(cars, 'F-150'));
-// console.log(getCarByModel(cars, 'CX-9'));
+// console.log(getCarByModel(cars, "F-150"));
+// console.log(getCarByModel(cars, "CX-343439"));
 
 /*
   6. Метод sort
@@ -149,10 +153,15 @@ const cars = [
   за збільшенням значення властивості amount
 */
 
-// const sortByAscendingAmount = (cars) => {};
+// const sortByAscendingAmount = (cars) =>
+//   [...cars].sort((a, b) => b.amount - a.amount);
 
 // console.table(cars);
 // console.table(sortByAscendingAmount(cars));
+
+// const arr = [1, 618, 5, 8, 0.5];
+
+// console.log(arr.slice().sort());
 
 /*
   7. Метод sort
@@ -163,11 +172,16 @@ const cars = [
   - localeCompare
 */
 
-// const sortByModel = (cars, order) => {};
+// const sortByModel = (cars, order) =>
+//   [...cars].sort((a, b) =>
+//     order === "asc"
+//       ? a.model.localeCompare(b.model)
+//       : b.model.localeCompare(a.model)
+//   );
 
 // console.table(cars);
-// console.table(sortByModel(cars, 'asc'));
-// console.table(sortByModel(cars, 'desc'));
+// console.table(sortByModel(cars, "asc"));
+// console.table(sortByModel(cars, "desc"));
 
 /*
   8. Ланцюжки методів
@@ -175,8 +189,10 @@ const cars = [
   Нехай функція getAvailableCarNames повертає масив моделей автомобілів, але тільки тих, що зараз на розпродажі.
 */
 
-// const getAvailableCarNames = (cars) => {};
+// const getAvailableCarNames = (cars) =>
+//   cars.filter(({ onSale }) => onSale).map(({ model }) => model);
 
+// console.table(cars);
 // console.log(getAvailableCarNames(cars));
 
 /*
@@ -185,7 +201,49 @@ const cars = [
   Нехай функція getTotalAmount повертає загальну кількість автомобілів (значення властивостей amount)
 */
 
-// const getTotalAmount = (cars) => {};
+// const getTotalAmount = (cars) =>
+//   cars.reduce((acc, el, index) => acc + el.amount);
 
 // console.table(cars);
+
+// // debugger;
 // console.log(getTotalAmount(cars)); // 100
+
+// const arr = [1, 2, 3, 4, 5];
+
+// debugger;
+
+// const result = arr.reduce((acc, el) => acc + el, 0);
+
+// console.log(result);
+
+// const colorPickerOptions = [
+//   { label: "red", color: "#F44336" },
+//   { label: "green", color: "#4CAF50" },
+//   { label: "blue", color: "#2196F3" },
+//   { label: "pink", color: "#E91E63" },
+//   { label: "indigo", color: "#3F51B5" },
+// ];
+
+// colorPickerOptions.findIndex((option) => option.label === "blue"); // 2
+// colorPickerOptions.findIndex((option) => option.label === "pink"); // 3
+// colorPickerOptions.findIndex((option) => option.label === "white"); // -1
+
+// const array = [{ array: [] }, { array: [1] }, { array: [] }];
+
+// console.log(array.findIndex(({ array }) => array.includes(1)));
+
+// debugger;
+
+// const array = [{}, 5, true, `88f`, 13, [3, 5]].reduce(
+//   (acc, el) => (isNaN(el) ? acc : acc + el),
+//   0
+// );
+
+// console.log(array);
+
+debugger;
+
+const filteredArr = cars.filter(({ make }) => make !== "Mazda");
+
+console.log(filteredArr);
