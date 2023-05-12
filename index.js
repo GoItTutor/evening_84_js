@@ -20,15 +20,25 @@
   - Показати в якому порядку викликаються функції
 */
 
-// function handleProduct(productData, callback) {}
+// // debugger;
 
-// function logProduct(product) {}
+// function handleProduct(productData, callback) {
+//   callback(productData);
+// }
 
-// function logTotalPrice(product) {}
+// function logProduct(product) {
+//   console.log(product);
+// }
+
+// function logTotalPrice(product) {
+//   const { price, quantity } = product;
+
+//   console.log(price * quantity);
+// }
 
 // handleProduct(
 //   {
-//     name: '🍎',
+//     name: "🍎",
 //     price: 30,
 //     quantity: 3,
 //   },
@@ -37,7 +47,7 @@
 
 // handleProduct(
 //   {
-//     name: '🍋',
+//     name: "🍋",
 //     price: 20,
 //     quantity: 5,
 //   },
@@ -65,11 +75,38 @@
 // const TRANSACTION_LIMIT = 1000;
 
 // const account = {
-//   firstname: 'Andrii',
-//   lastname: 'Shevchuk',
+//   firstname: "Andrii",
+//   lastname: "Shevchuk",
 //   balance: 618,
-//   withdraw(amount, onSuccess, onError) {},
-//   deposit(amount, onSuccess, onError) {},
+
+//   withdraw(amount, onSuccess, onError) {
+//     if (amount > TRANSACTION_LIMIT || amount > this.balance || amount <= 0) {
+//       onError(`Ви не можете зняти суму ${amount}, баланс - ${this.balance}`);
+
+//       return;
+//     }
+
+//     this.balance -= amount;
+
+//     onSuccess(
+//       `Операція зняття на суму ${amount} пройшла успішно, баланс - ${this.balance}`
+//     );
+//   },
+//   deposit(amount, onSuccess, onError) {
+//     if (amount > TRANSACTION_LIMIT || amount <= 0) {
+//       onError(
+//         `Ви не можете поповнити суму ${amount}, баланс - ${this.balance}`
+//       );
+
+//       return;
+//     }
+
+//     this.balance += amount;
+
+//     onSuccess(
+//       `Операція поповнення на суму ${amount} пройшла успішно, баланс - ${this.balance}`
+//     );
+//   },
 // };
 
 // function handleSuccess(message) {
@@ -99,7 +136,17 @@
   результати виклику коллбеку
 */
 
-// function each(array, callback) {}
+// function each(array, callback) {
+//   const resultArray = [];
+
+//   for (let el of array) {
+//     const callbackResult = callback(el);
+
+//     resultArray.push(callbackResult);
+//   }
+
+//   return resultArray;
+// }
 
 // console.log(
 //   each([64, 49, 36, 25, 16], function (value) {
@@ -142,31 +189,48 @@
   Перепишіть функцію getSum, слідуючи синтаксису стрілочних функцій
 */
 
+// function consoleLog(...rest) {
+//   console.log(...rest);
+// }
+
+// const consoleLog = (...rest) => {
+//   console.log(...rest);
+// };
+
 // function getSum(firstNumber, secondNumber) {
 //   return firstNumber + secondNumber;
 // }
 
+// const getSum = (firstNumber, secondNumber) => firstNumber + secondNumber;
+
+// console.log(getSum(5, 11));
+
+// const arrowFunc = (...rest) => {
+//   console.log(rest);
+// };
+
+// arrowFunc();
 /*
   5. Стрілочні функції
   
   Перепишіть функції, слідуючи синтаксису стрілочних функцій
 */
 
-// function handleProduct(productData, callback) {
-//   callback(product);
-// }
+// const handleProduct = (productData, callback) => {
+//   callback(productData);
+// };
 
-// function logProduct(product) {
+// const logProduct = (product) => {
 //   console.log(product);
-// }
+// };
 
-// function logTotalPrice({ price, quantity }) {
+// const logTotalPrice = ({ price, quantity }) => {
 //   console.log(price * quantity);
-// }
+// };
 
 // handleProduct(
 //   {
-//     name: '🍎',
+//     name: "🍎",
 //     price: 30,
 //     quantity: 3,
 //   },
@@ -175,7 +239,7 @@
 
 // handleProduct(
 //   {
-//     name: '🍋',
+//     name: "🍋",
 //     price: 20,
 //     quantity: 5,
 //   },
@@ -188,7 +252,7 @@
   Перепишіть функції, слідуючи синтаксису стрілочних функцій
 */
 
-// function each(array, callback) {
+// const each = (array, callback) => {
 //   const newArr = [];
 
 //   for (const el of array) {
@@ -196,37 +260,17 @@
 //   }
 
 //   return newArr;
-// }
+// };
 
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return value * 2;
-//   })
-// );
+// console.log(each([64, 49, 36, 25, 16], (value) => value * 2));
 
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return value - 10;
-//   })
-// );
+// console.log(each([64, 49, 36, 25, 16], (value) => value - 10));
 
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return Math.sqrt(value);
-//   })
-// );
+// console.log(each([64, 49, 36, 25, 16], (value) => Math.sqrt(value)));
 
-// console.log(
-//   each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
-//     return Math.ceil(value);
-//   })
-// );
+// console.log(each([1.5, 2.1, 16.4, 9.7, 11.3], (value) => Math.ceil(value)));
 
-// console.log(
-//   each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
-//     return Math.floor(value);
-//   })
-// );
+// console.log(each([1.5, 2.1, 16.4, 9.7, 11.3], (value) => Math.floor(value)));
 
 /*
   7. Метод forEach
@@ -243,8 +287,14 @@
 //   }
 // }
 
-// logItems(['Mango', 'Poly', 'Ajax']);
-// logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
+// const logItems = (items) => {
+//   items.forEach((el, index) => {
+//     console.log(`${index + 1} - ${el}`);
+//   });
+// };
+
+// logItems(["Mango", "Poly", "Ajax"]);
+// logItems(["🍎", "🍇", "🍑", "🍌", "🍋"]);
 
 /*
   8. Метод forEach
@@ -253,17 +303,26 @@
 */
 
 // function printContactsInfo({ names, phones }) {
-//   const namesArray = names.split(',');
-//   const phonesArray = phones.split(',');
+//   const namesArray = names.split(",");
+//   const phonesArray = phones.split(",");
 
 //   for (let i = 0; i < namesArray.length; i += 1) {
 //     console.log(`${namesArray[i]}: ${phonesArray[i]}`);
 //   }
 // }
 
+// const printContactsInfo = ({ names, phones }) => {
+//   const namesArray = names.split(",");
+//   const phonesArray = phones.split(",");
+
+//   namesArray.forEach((el, index) => {
+//     console.log(`${el}: ${phonesArray[index]}`);
+//   });
+// };
+
 // printContactsInfo({
-//   names: 'Jacob,William,Solomon,Artem',
-//   phones: '89001234567,89001112233,890055566377, 890055558379',
+//   names: "Jacob,William,Solomon,Artem",
+//   phones: "89001234567,89001112233,890055566377,890055558379",
 // });
 
 /*
@@ -282,6 +341,68 @@
 //   return total / args.length;
 // }
 
+// const calculateAverage = (...args) => {
+//   let total = 0;
+
+//   args.forEach((el) => {
+//     total += el;
+//   });
+
+//   return total / args.length;
+// };
+
 // console.log(calculateAverage(1, 2, 3, 4)); // 2.5
 // console.log(calculateAverage(14, 8, 2)); // 8
 // console.log(calculateAverage(27, 43, 2, 8, 36)); // 23.2
+
+// const numbers = [5, 10, 15, 20, 25];
+
+// const logMessage = (number, index) => {
+//   console.log(`Індекс ${index}, значення ${number}`);
+// };
+
+// numbers.forEach(logMessage);
+
+// function processCall(recipient, onAvailable, onNotAvailable) {
+//   // Имитируем доступность абонента случайным числом
+//   const isRecipientAvailable = Math.random() > 0.5;
+
+//   if (!isRecipientAvailable) {
+//     onNotAvailable(recipient);
+//     return;
+//   }
+
+//   onAvailable(recipient);
+// }
+
+// function takeCall(name) {
+//   console.log(`Соединяем с ${name}, ожидайте...`);
+//   // Логика принятия звонка
+// }
+
+// function activateAnsweringMachine(name) {
+//   console.log(`Абонент ${name} недоступен, оставьте сообщение.`);
+//   // Логика активации автоответчика
+// }
+
+// function leaveHoloMessage(name) {
+//   console.log(`Абонент ${name} недоступен, записываем голограмму.`);
+// Логика записи голограммы
+// }
+
+// processCall("Манго", takeCall, activateAnsweringMachine);
+// processCall("Поли", takeCall, leaveHoloMessage);
+
+// [58, 618, 3].forEach((el, index) => {
+//   console.log(el, index);
+// });
+
+// const arrowAdd = (a, b, c) => a + b + c;
+
+// console.log(arrowAdd(1, 2, 3));
+
+// const arrowAdd = (a, b, c) => {
+//   console.log(a + b + c);
+// };
+
+// arrowAdd(1, 2, 3);
