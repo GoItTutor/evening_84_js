@@ -75,55 +75,55 @@
   </li>
 */
 
-// const pictures = [
-//   {
-//     width: 700,
-//     height: 460,
-//     url: "https://picsum.photos/id/0/700/460",
-//     alt: "laptop",
-//   },
-//   {
-//     width: 700,
-//     height: 460,
-//     url: "https://picsum.photos/id/1/700/460",
-//     alt: "developer",
-//   },
-//   {
-//     width: 700,
-//     height: 460,
-//     url: "https://picsum.photos/id/10/700/460",
-//     alt: "forest",
-//   },
-//   {
-//     width: 700,
-//     height: 460,
-//     url: "https://picsum.photos/id/100/700/460",
-//     alt: "beach",
-//   },
-//   {
-//     width: 700,
-//     height: 460,
-//     url: "https://picsum.photos/id/1000/700/460",
-//     alt: "mountain",
-//   },
-// ];
+const pictures = [
+  {
+    width: 700,
+    height: 460,
+    url: "https://picsum.photos/id/0/700/460",
+    alt: "laptop",
+  },
+  {
+    width: 700,
+    height: 460,
+    url: "https://picsum.photos/id/1/700/460",
+    alt: "developer",
+  },
+  {
+    width: 700,
+    height: 460,
+    url: "https://picsum.photos/id/10/700/460",
+    alt: "forest",
+  },
+  {
+    width: 700,
+    height: 460,
+    url: "https://picsum.photos/id/100/700/460",
+    alt: "beach",
+  },
+  {
+    width: 700,
+    height: 460,
+    url: "https://picsum.photos/id/1000/700/460",
+    alt: "mountain",
+  },
+];
 
-// // Написати функцію яка створить розмітку картки
-// const makeGalleryCard = ({
-//   width,
-//   height,
-//   url,
-//   alt,
-// }) => `<li class="gallery-item">
-//     <a href="#">
-//       <img src="${url}" alt="${alt}" height="${height}" width="${width}">
-//     </a>
-//   </li>`;
+// Написати функцію яка створить розмітку картки
+const makeGalleryCard = ({
+  width,
+  height,
+  url,
+  alt,
+}) => `<li class="gallery-item">
+    <a href="#">
+      <img src="${url}" alt="${alt}" height="${height}" width="${width}">
+    </a>
+  </li>`;
 
-// const markup = pictures.map((el) => makeGalleryCard(el));
+const markup = pictures.map((el) => makeGalleryCard(el));
 
-// // Cтворити масив із розмітки і вставити у список .gallery
+// Cтворити масив із розмітки і вставити у список .gallery
 
-// const galleryEl = document.querySelector(".gallery");
+const galleryEl = document.querySelector(".gallery");
 
-// galleryEl.insertAdjacentHTML("afterbegin", markup.join(""));
+galleryEl.insertAdjacentHTML("afterbegin", markup.join(""));
