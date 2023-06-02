@@ -15,3 +15,19 @@
 */
 
 // https://picsum.photos/200/300
+
+const imgEl = document.querySelector(".js-img");
+
+const swapBtnEl = document.querySelector(".js-swap-btn");
+
+const removeListenerBtnEl = document.querySelector(".js-remove-listener");
+
+const handleSwapBtnClick = () => {
+  imgEl.src = `https://picsum.photos/200/300`;
+};
+
+swapBtnEl.addEventListener("click", handleSwapBtnClick);
+
+removeListenerBtnEl.addEventListener("click", () => {
+  swapBtnEl.removeEventListener("click", handleSwapBtnClick);
+});
