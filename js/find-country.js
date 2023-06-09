@@ -34,12 +34,58 @@ const countries = [
 ];
 
 const searchInputEl = document.querySelector('.search-input');
-const outputError = document.querySelector('.output-error');
+const outputErrorEl = document.querySelector('.output-error');
 const countryCardEl = document.querySelector('.country-card');
+const spinnerEl = document.querySelector('.spinner');
 
 const createCountryCard = ({ name, capital, population, area } = {}) => {
-  return `<li class="country-card__item"><strong>Страна:</strong> ${name}</li>
-     <li class="country-card__item"><strong>Столица:</strong> ${capital}</li>
-     <li class="country-card__item"><strong>Население:</strong> ${population}</li>
-     <li class="country-card__item"><strong>Площадь:</strong> ${area}км<sup>2</sup></li>`;
+  return `<li class="country-card__item"><strong>Країна:</strong> ${name}</li>
+     <li class="country-card__item"><strong>Столиця:</strong> ${capital}</li>
+     <li class="country-card__item"><strong>Населення:</strong> ${population}</li>
+     <li class="country-card__item"><strong>Площа:</strong> ${area} км<sup>2</sup></li>`;
 };
+
+const handleSearchCountry = ({ target }) => {
+  const countryName = target.value.trim().toLowerCase();
+
+  if (!countryName) {
+    outputErrorEl.textContent = '';
+    countryCardEl.innerHTML = '';
+
+    return;
+  }
+
+  const seekedCountryData = countries.find(
+    ({ name }) => name.toLowerCase() === countryName
+  );
+
+  if (!seekedCountryData) {
+    countryCardEl.innerHTML = '';
+
+    outputErrorEl.textContent = 'Такої країни немає у базі даних';
+
+    return;
+  }
+
+  outputErrorEl.textContent = '';
+  countryCardEl.innerHTML = createCountryCard(seekedCountryData);
+};
+
+searchInputEl.addEventListener('input', _.debounce(handleSearchCountry, 700));
+
+searchInputEl.addEventListener(
+  'input',
+  _.debounce(
+    () => {
+      countryCardEl.innerHTML = '';
+      outputErrorEl.textContent = '';
+
+      spinnerEl.classList.toggle('visible');
+    },
+    690,
+    {
+      leading: true,
+      trailing: true,
+    }
+  )
+);

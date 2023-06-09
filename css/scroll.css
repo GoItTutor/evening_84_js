@@ -3,13 +3,9 @@
   height: 400px;
   color: #ffffff;
   padding: 40px;
+  transition: transform 500ms linear;
 }
 
 .animated-section {
   transform: translateX(-100%);
-  transition: transform 500ms linear;
-}
-
-.animated-section.active {
-  transform: translateX(0%);
 }
