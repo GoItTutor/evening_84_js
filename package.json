@@ -1,0 +1,23 @@
+{
+  "name": "evening_84_js",
+  "version": "1.0.0",
+  "description": "- Термінал",
+  "main": "index.js",
+  "scripts": {
+    "do-something": "echo \"Hello!\" && exit 1",
+    "build": "babel src -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "babel-plugin-minify-simplify": "^0.5.1",
+    "babel-preset-minify": "^0.5.2"
+  },
+  "dependencies": {
+    "simplelightbox": "^2.14.1"
+  }
+}
