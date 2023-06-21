@@ -9,3 +9,19 @@
 // Функції відкладеного виклику window.setTimeout(callback, delay, arg1, arg2, ...);
 
 // Очищення інтервалів і таймаутів clearInterval(intervalID), clearTimeout(timeoutID)
+
+// setTimeout(() => {
+//   clearInterval(intervalID);
+// }, 3500);
+
+// const intervalID = setInterval(() => {
+//   console.count('hi!');
+// }, 1000);
+
+setTimeout(() => {
+  clearTimeout(timeoutID);
+}, 3000);
+
+const timeoutID = setTimeout(() => {
+  console.log(true);
+}, 3000);
