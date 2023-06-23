@@ -6,7 +6,33 @@
 
 //? конструктор new Promise(callback(resolve, reject));
 
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     if (Math.random() > 0.5) {
+//       resolve('Done');
+//     } else {
+//       reject('Error');
+//     }
+//   }, 1000);
+// });
+
 //? then(onSuccess, onError)
+
+// promise
+//   .then(data => {
+//     console.log(`Value is ${data}`);
+//   })
+//   .then(() => {
+//     console.log(1313);
+//   })
+//   .catch(err => {
+//     console.warn(err);
+//   })
+//   .finally(() => {
+//     console.log('Finally did');
+//   });
+
+// console.log(promise);
 
 //? ланцюжок промісів та catch(onError)
 
@@ -21,7 +47,7 @@
 
 //   setTimeout(() => {
 //     resolve(2);
-//   }, 1000);
+//   }, 5000);
 // });
 
 // promise.then(result => {

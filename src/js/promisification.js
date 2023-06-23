@@ -1,4 +1,3 @@
-'use strict';
 // https://api.github.com/users/GoItTutor
 
 // function myAsyncFunction(url) {
@@ -25,6 +24,7 @@
 //   .catch(console.log);
 
 //? Запит за користувачем на колбэках
+
 // const fetchUserByName = (name, onSuccess, onError) => {
 //   console.log('Робимо запит на сервер...');
 
@@ -55,4 +55,27 @@
 
 // fetchUserByName('Ida', handleSuccessFetch, handleErrorFetch);
 
+// promise way
+
+const fetchUserByName = name => {
+  console.log('Робимо запит на сервер...');
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() < 0.5) {
+        const user = {
+          firstName: name,
+          lastName: 'Francis',
+          age: 30,
+        };
+
+        resolve(user);
+      } else {
+        reject("Користувача з таким ім'ям не знайдено");
+      }
+    }, 1000);
+  });
+};
+
+fetchUserByName('Anna').then(console.log).catch(console.warn);
 //? Запит за користувачем на промісах
