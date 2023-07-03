@@ -1,5 +1,9 @@
 {{#each this}}
   <li class='gallery__item'>
-    <img src='{{urls.small}}' alt='{{alt_description}}' class='gallery-img' />
+    <img
+      src='{{this.urls.small}}'
+      alt='{{this.alt_description}}'
+      class='gallery-img'
+    />
   </li>
 {{/each}}
