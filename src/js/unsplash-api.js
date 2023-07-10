@@ -8,8 +8,8 @@ export class UnsplashAPI {
   page = 1;
   query = null;
 
-  fetchPhotos() {
-    return axios.get(`${this.#BASE_URL}/search/photos`, {
+  async fetchPhotos() {
+    return await axios.get(`${this.#BASE_URL}/search/photos`, {
       params: {
         query: this.query,
         page: this.page,
